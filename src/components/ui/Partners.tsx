@@ -1,52 +1,53 @@
 import React from 'react';
 
+import client1 from '../../assets/image/clients-1.png';
+import client2 from '../../assets/image/clients-2.png';
+import client3 from '../../assets/image/clients-3.png';
+import client4 from '../../assets/image/clients-4.png';
+import client5 from '../../assets/image/clients-5.png';
+import client6 from '../../assets/image/clients-6.png';
+import client7 from '../../assets/image/clients-7.png';
+import client8 from '../../assets/image/clients-8.png';
+import client9 from '../../assets/image/clients-9.png';
+
 const partners = [
-  { name: 'ITC', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/ITC_Limited_Logo.svg/512px-ITC_Limited_Logo.svg.png' },
-  { name: 'SAMKWANG', logo: 'https://www.samkwang.com/assets/site/img/contents/logo_big.png' },
-  { name: 'SINWOO', logo: 'https://www.sinwoopack.com/theme/sinwoo/img/logo.svg' },
-  { name: 'vivo', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Vivo_mobile_logo.png/512px-Vivo_mobile_logo.png' },
-  { name: 'oppo', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/OPPO_Logo_%282019%29.svg/512px-OPPO_Logo_%282019%29.svg.png' },
-  { name: 'asianpaints', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Asian_Paints_logo.svg/512px-Asian_Paints_logo.svg.png' },
-  { name: 'Haier', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Haier_logo.svg/512px-Haier_logo.svg.png' },
-  { name: 'HCLTech', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/HCLTech-new-logo.svg/512px-HCLTech-new-logo.svg.png' },
-  { name: 'Hindustan Unilever', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/Hindustan_Unilever_Logo.svg/512px-Hindustan_Unilever_Logo.svg.png' },
+  { name: 'Client 1', logo: client1 },
+  { name: 'Client 2', logo: client2 },
+  { name: 'Client 3', logo: client3 },
+  { name: 'Client 4', logo: client4 },
+  { name: 'Client 5', logo: client5 },
+  { name: 'Client 6', logo: client6 },
+  { name: 'Client 7', logo: client7 },
+  { name: 'Client 8', logo: client8 },
+  { name: 'Client 9', logo: client9 },
 ];
 
 export default function Partners() {
   return (
-    <section className="w-full bg-[#f8fcf9] py-12 lg:py-20 border-y border-gray-100/50">
-      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 xl:px-12 mb-10 lg:mb-16 text-center">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+    <section className="w-full bg-[#f8fcf9] py-8 lg:py-10 border-y border-gray-100/50">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 xl:px-12 mb-6 lg:mb-8 text-center">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 tracking-tight">
           Our <span className="text-eco">Partners</span>
         </h2>
-        <p className="text-gray-500 text-sm md:text-base max-w-2xl mx-auto font-medium">
-          Partnering for Progress: Together, We Drive Sustainable Solutions and Innovation.
-        </p>
       </div>
 
-      <div className="flex overflow-hidden group gap-6 py-4">
+      <div className="flex overflow-hidden group gap-4 py-2">
         {[...Array(2)].map((_, i) => (
           <div 
             key={i} 
-            className="flex min-w-max shrink-0 gap-6 animate-auto-scroll group-hover:[animation-play-state:paused]"
+            className="flex min-w-max shrink-0 gap-4 animate-auto-scroll group-hover:[animation-play-state:paused]"
           >
             {partners.map((partner, idx) => (
               <div 
                 key={`${i}-${idx}`} 
-                className="w-[180px] sm:w-[220px] h-[90px] sm:h-[110px] bg-white rounded-xl sm:rounded-2xl shadow-sm hover:shadow-md border border-gray-100 hover:border-eco/30 flex items-center justify-center transition-all duration-300 cursor-pointer p-4 sm:p-6"
+                className="group/card w-[140px] sm:w-[170px] h-[70px] sm:h-[85px] bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-100/80 hover:border-eco/20 flex items-center justify-center transition-all duration-300 cursor-pointer p-2 sm:p-3"
               >
                 <img 
                   src={partner.logo} 
                   alt={partner.name}
-                  className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = 'none';
-                    (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
-                  }}
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-contain scale-95 transition-transform duration-300 group-hover/card:scale-105 opacity-90 group-hover/card:opacity-100"
                 />
-                <span className="hidden font-bold text-base sm:text-lg text-gray-800 tracking-wide text-center">
-                  {partner.name}
-                </span>
               </div>
             ))}
           </div>

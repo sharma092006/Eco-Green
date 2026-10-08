@@ -12,7 +12,7 @@ const materials = [
 
 export default function MaterialsBanner() {
   return (
-    <section className="relative w-full py-20 lg:py-28 bg-[#093c25] overflow-hidden flex items-center justify-center">
+    <section className="relative w-full py-12 lg:py-16 bg-[#093c25] overflow-hidden flex items-center justify-center">
       
       {/* Deep Background Image with Blend */}
       <div className="absolute inset-0 z-0">
@@ -32,33 +32,33 @@ export default function MaterialsBanner() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border-[1px] border-white/5 rounded-full animate-ping-slow pointer-events-none"></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border-[1px] border-white/5 rounded-full animate-ping-slow delay-1000 pointer-events-none"></div>
 
-      <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-6 xl:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-8">
+      <div className="max-w-[1300px] w-full mx-auto px-4 sm:px-6 xl:px-12 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
           
           {/* Left Content Column */}
           <div className="w-full lg:w-5/12 flex flex-col">
             
             {/* Subtitle with pulsing dot */}
-            <div className="flex items-center gap-3 mb-6">
-              <span className="relative flex h-3 w-3">
+            <div className="flex items-center gap-2.5 mb-5">
+              <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#3BCA6D] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-[#3BCA6D]"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#3BCA6D]"></span>
               </span>
-              <span className="text-[#3BCA6D] font-bold uppercase tracking-widest text-sm drop-shadow-md">
+              <span className="text-[#3BCA6D] font-bold uppercase tracking-[0.2em] text-xs drop-shadow-md">
                 Recycle Materials
               </span>
             </div>
 
             {/* Main Title */}
-            <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.15] mb-8 drop-shadow-xl">
+            <h2 className="text-3xl md:text-4xl lg:text-[3rem] font-bold text-white leading-[1.1] mb-6 drop-shadow-xl tracking-tight">
               We collect, recycle & <br className="hidden md:block lg:hidden xl:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#3BCA6D] animate-gradient-x">
+              <span className="text-[#3BCA6D]">
                 disposal all materials
               </span>
             </h2>
 
             {/* Glowing separator line */}
-            <div className="w-24 h-1 rounded-full bg-gradient-to-r from-[#3BCA6D] to-transparent relative overflow-hidden">
+            <div className="w-16 h-[2px] rounded-full bg-gradient-to-r from-[#3BCA6D] to-transparent relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-full bg-white/50 animate-[shimmer-sweep_3s_infinite]"></div>
             </div>
 
@@ -66,14 +66,14 @@ export default function MaterialsBanner() {
 
           {/* Right Grid Column */}
           <div className="w-full lg:w-6/12 relative">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 md:gap-4">
               {materials.map((material, idx) => (
                 <div 
                   key={idx} 
                   className={`
-                    group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 
-                    flex items-center gap-4 transition-all duration-500 cursor-default
-                    hover:bg-white/10 hover:border-[#3BCA6D]/50 hover:shadow-[0_0_30px_rgba(59,202,109,0.2)] hover:-translate-y-1
+                    group relative bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] rounded-xl px-5 py-3.5
+                    flex items-center gap-3.5 transition-all duration-300 cursor-default
+                    hover:bg-white/[0.08] hover:border-[#3BCA6D]/40 hover:shadow-[0_0_20px_rgba(59,202,109,0.15)] hover:-translate-y-0.5
                   `}
                   style={{ 
                     animation: `soft-float 6s ease-in-out infinite`,
@@ -81,17 +81,17 @@ export default function MaterialsBanner() {
                   }}
                 >
                   {/* Icon Container */}
-                  <div className="w-10 h-10 rounded-full bg-[#3BCA6D]/10 flex items-center justify-center border border-[#3BCA6D]/30 group-hover:bg-[#3BCA6D] transition-colors duration-500 shadow-inner group-hover:shadow-[0_0_15px_rgba(59,202,109,0.5)]">
-                    <CheckCircle2 size={20} className="text-[#3BCA6D] group-hover:text-white transition-colors duration-500" />
+                  <div className="w-8 h-8 rounded-full bg-[#3BCA6D]/10 flex items-center justify-center border border-[#3BCA6D]/20 group-hover:bg-[#3BCA6D] transition-colors duration-300 shadow-inner group-hover:shadow-[0_0_15px_rgba(59,202,109,0.4)] flex-shrink-0">
+                    <CheckCircle2 size={15} className="text-[#3BCA6D] group-hover:text-white transition-colors duration-300 stroke-[2.5]" />
                   </div>
 
                   {/* Text */}
-                  <span className="text-white font-medium text-base md:text-lg tracking-wide group-hover:text-[#3BCA6D] transition-colors duration-300">
+                  <span className="text-gray-100 font-medium text-[14px] md:text-[15px] tracking-wide group-hover:text-white transition-colors duration-300">
                     {material}
                   </span>
 
                   {/* Sweep highlight effect on hover */}
-                  <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
+                  <div className="absolute inset-0 rounded-xl overflow-hidden pointer-events-none">
                     <div className="absolute top-0 -left-full w-1/2 h-full bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12 group-hover:animate-[shimmer-sweep_0.75s_ease-out_forwards]"></div>
                   </div>
                 </div>
