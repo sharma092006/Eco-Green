@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased text-gray-800 bg-eco-light;
+  }
+}
+
+@layer utilities {
+  @keyframes auto-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% - 1.5rem));
+    }
+  }
+
+  .animate-auto-scroll {
+    animation: auto-scroll 30s linear infinite;
+  }
+}
